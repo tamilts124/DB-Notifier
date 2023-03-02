@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/steelBlue"
+    android:paddingHorizontal="10dp"
+    android:paddingVertical="12dp"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/place"
+        android:textColor="@color/green"
+        android:text="Place"
+        android:textSize="15dp"
+        android:fontFamily="serif"
+        android:paddingHorizontal="3dp"
+        android:paddingVertical="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/level"
+        android:textColor="@color/red"
+        android:text="Type"
+        android:textSize="13dp"
+        android:fontFamily="serif"
+        android:paddingHorizontal="3dp"
+        android:paddingVertical="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/date"
+        android:textColor="@color/blue"
+        android:text="Time"
+        android:textSize="12dp"
+        android:fontFamily="serif"
+        android:paddingHorizontal="3dp"
+        android:paddingVertical="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/time"
+        android:textColor="@color/orange"
+        android:text="Date"
+        android:textSize="12dp"
+        android:fontFamily="serif"
+        android:paddingHorizontal="3dp"
+        android:paddingVertical="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/info"
+        android:textColor="@color/red"
+        android:text="Info"
+        android:textSize="10dp"
+        android:fontFamily="serif"
+        android:paddingHorizontal="3dp"
+        android:paddingVertical="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
