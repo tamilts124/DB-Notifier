@@ -22,5 +22,5 @@ This app Helps to Monitor your Program what does
          Times int not null default 1,
          primary key(Id) )
 
-3) It Lision Every 5 minites to Checks Any Notifications are Avaible
+3) It Lision Every 5 minites to Checks Any Notifications are Available
 
