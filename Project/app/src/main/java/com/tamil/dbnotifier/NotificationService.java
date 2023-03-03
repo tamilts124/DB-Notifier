@@ -25,6 +25,7 @@ import java.util.List;
 public class NotificationService extends Service {
 
     private String notificationCount ="0";
+    private String latestNotificationCount ="0";
     private Infinitydatabase infdb =null;
 
     @Override
@@ -42,7 +43,7 @@ public class NotificationService extends Service {
 
                 // If there are new articles, create and send a notification
                 if (!latestNotification.isEmpty() && !latestNotification.get(0).get(0).equals("0")) {
-                    String latestNotificationCount = (String) latestNotification.get(0).get(0);
+                    latestNotificationCount = (String) latestNotification.get(0).get(0);
                     NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                     ArrayList<StatusBarNotification[]> activeNotifications = new ArrayList<>();
                     if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
@@ -50,6 +51,7 @@ public class NotificationService extends Service {
                     if (!(latestNotificationCount.equals(notificationCount)) || activeNotifications.isEmpty()) {
                         String channelId = "news_updates_channel";
                         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, channelId)
+                                .setSmallIcon(android.R.mipmap.sym_def_app_icon)
                                 .setContentTitle("New Notification Available")
                                 .setContentText("There are " + latestNotification.get(0).get(0) + " new Notifications available.")
                                 .setPriority(NotificationCompat.PRIORITY_HIGH)
@@ -70,13 +72,12 @@ public class NotificationService extends Service {
 
                         int notificationId = 1;
                         notificationManager.notify(notificationId, notificationBuilder.build());
-
-                        notificationCount = latestNotificationCount;
                     }
                 }
             }
         } catch (Exception e) {e.printStackTrace();}
         // Schedule next update
+        notificationCount = latestNotificationCount;
         scheduleNextUpdate();
 
         // Return START_STICKY to keep the service running even if the app is in the background
